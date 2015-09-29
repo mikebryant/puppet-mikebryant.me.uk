@@ -1,0 +1,9 @@
+#!/bin/sh -ex
+
+git pull
+
+apt-get install -qq puppet librarian-puppet
+
+librarian-puppet update --verbose
+
+puppet apply --verbose /etc/puppet/manifests/site.pp

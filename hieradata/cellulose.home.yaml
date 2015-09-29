@@ -1,0 +1,9 @@
+---
+classes:
+ - nfs::server
+
+nfs::server::hiera_exports: true
+nfs::server::exports:
+  /mnt/media:
+    ensure: mounted
+    clients: '*(fsid=0,ro,insecure,async,all_squash,no_subtree_check,mountpoint=/mnt/media)'
